@@ -1,0 +1,12 @@
+<div class="p-2 border" style="background: #f4f2e9">
+  <div class=" horizontal">
+      <div class="mr-4"><img src="{{book.imageUrl}}" alt="..." class="" style="height: 300px;"></div>
+      <div class="text-center py-2">
+        <h3 class="font-weight-bold">{{book.title}}</h3>
+        <h5 class="font-italic font-weight-light">{{book.author}}</h5>
+        <p>{{book.description}}</p>
+      </div>
+   </div>
+   <hr>
+    <a routerLink="/details/{{book.id}}" class="btn btn-primary flex mb-2">View more</a>
+</div>

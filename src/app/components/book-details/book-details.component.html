@@ -1,0 +1,35 @@
+<div class="container p-5 text-center">
+    <div class="p-4 border" style="background: #f4f2e9">
+        <div class=" horizontal">
+            <div class="mrg inline text-center">
+              <img src="{{book.imageUrl}}" alt="..." class="" style="height: 400px;">
+              <p class="mt-4 m-0">Rating:</p>
+              <h4>{{book.rating}}</h4>
+            </div>
+            <div class="text-center py-2">
+              <h3 class="font-weight-bold">{{book.title}}</h3>
+              <h5 class="font-italic font-weight-light">{{book.author}}</h5>
+              <hr>
+              <div class="row">
+                <div class="col col-4">
+                    <p class="m-0">Genre:</p>
+                    <h5 >{{book.genre}}</h5>
+                </div>
+                <div class="col col-4">
+                    <p class="m-0">Pages:</p>
+                    <h5 >{{book.pages}}</h5>
+                </div>
+                <div class="col col-4">
+                    <p class="m-0">Published:</p>
+                    <h5 >{{book.published}}</h5>
+                </div>
+              </div>
+              <hr>
+              <p >{{book.description}}</p>
+            </div>
+         </div>
+         <hr>
+        <button class="btn btn-danger my-3">Add to favorites</button>
+        <button class="btn btn-success my-3 ml-3">Edit book</button>
+      </div>
+</div>

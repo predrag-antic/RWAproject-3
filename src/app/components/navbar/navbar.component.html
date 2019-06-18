@@ -1,5 +1,5 @@
-<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand mr-5" href="#">NextBook</a>
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light px-4" style="background: #f4f2e9">
+    <a class="navbar-brand mr-5" style="font-size: 25px" href="#">next<span class="font-weight-bold">book</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
        aria-expanded="false" aria-label="Toggle navigation"
@@ -9,15 +9,15 @@
     <div id="navbarSupportedContent" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}" class="text-center">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" routerLink="/home">Home</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="#">My Books</a>
-          </li>
+          </li> -->
           <li class="nav-item">
               <a class="nav-link" href="#">Favorites</a>
           </li>
       </ul>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add Book</button>
+      <a class="btn btn-outline-dark my-2 my-sm-0" routerLink="/add-book">Add Book</a>
     </div>
 </nav>
