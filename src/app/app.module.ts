@@ -12,6 +12,8 @@ import { BookComponent } from './components/book/book.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BookAddComponent } from './components/book-add/book-add.component';
+import { EffectsModule } from '@ngrx/effects';
+import { BookEffect } from './store/book.effect';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { BookAddComponent } from './components/book-add/book-add.component';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(rootReducer),
+    EffectsModule.forRoot([BookEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 20
     })

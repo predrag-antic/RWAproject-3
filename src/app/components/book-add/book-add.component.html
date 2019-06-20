@@ -1,4 +1,47 @@
-<div class="container">
-  add book
+<div class="container p-3 border mt-5" style="background: #f4f2e9">
 
+  <h2 class="my-3 text-center">Recommend a book</h2>
+
+  <form >
+    <label for="title">Title:</label>
+    <input type="text" class="form-control mb-4" id='title' placeholder="Please insert title" formControlName="title">
+
+    <div class="row">
+      <div class="col col-6">
+        <label  for="author">Author:</label>
+        <input type="text" class="form-control mb-4" id="author" placeholder="Please insert author"  formControlName="author">
+      </div>
+      <div class="col col-6">
+        <label for="genre">Genre:</label>
+        <input type="text" class="form-control mb-4" id="genre" placeholder="Please insert genre"  formControlName="genre"> 
+      </div>
+    </div>
+
+    <label for="description">Description:</label>
+    <textarea class="form-control mb-4" id="description" rows="3" placeholder="Please insert book description"  formControlName="description"></textarea>
+
+    <div class="row">
+        <div class="col col-4">
+          <label for="rating">Rating:</label>
+          <input type="text" class="form-control mb-4" id="rating" placeholder="Please insert rating"  formControlName="rating">
+        </div>
+        <div class="col col-4">
+          <label for="pages">Number of pages:</label>
+          <input type="text" class="form-control mb-4" id="pages" placeholder="Please insert number of pages"  formControlName="pages">
+        </div>
+        <div class="col col-4">
+          <label for="published">First published:</label>
+          <input type="text" class="form-control mb-4" id="published" placeholder="Please insert year of first publication"  formControlName="published">
+        </div>
+    </div>
+
+    <label for="imageUrl">Book cover:</label>
+    <input type="text" class="form-control mb-4" id="imageUrl" placeholder="Please insert url of book cover"  formControlName="imageUrl"> 
+     
+    <div class="text-center">
+      <button class="btn btn-success" type="submit">
+        Add book
+      </button> 
+    </div>
+  </form>
 </div>
