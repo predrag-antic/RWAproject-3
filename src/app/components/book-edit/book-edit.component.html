@@ -1,0 +1,50 @@
+<div class="container p-3 border mt-5" style="background: #f4f2e9">
+
+  <h2 class="my-3 text-center">Edit a book</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control mb-4" id='title' value="{{book.title}}"  formControlName="title">
+
+    <div class="row">
+      <div class="col col-6">
+        <label  for="author">Author:</label>
+        <input type="text" class="form-control mb-4" id="author" value="{{book.author}}"   formControlName="author">
+      </div>
+      <div class="col col-6">
+        <label for="genre">Genre:</label>
+        <input type="text" class="form-control mb-4" id="genre" value="{{book.genre}}"  formControlName="genre"> 
+      </div>
+    </div>
+
+    <label for="description">Description:</label>
+    <textarea class="form-control mb-4" id="description" rows="3"   formControlName="description">{{book.description}}</textarea>
+
+    <div class="row">
+        <div class="col col-4">
+          <label for="rating">Rating:</label>
+          <input type="text" class="form-control mb-4" id="rating" value="{{book.rating}}"   formControlName="rating">
+        </div>
+        <div class="col col-4">
+          <label for="pages">Number of pages:</label>
+          <input type="text" class="form-control mb-4" id="pages" value="{{book.pages}}"   formControlName="pages">
+        </div>
+        <div class="col col-4">
+          <label for="published">First published:</label>
+          <input type="text" class="form-control mb-4" id="published" value="{{book.published}}"   formControlName="published">
+        </div>
+    </div>
+
+    <label for="imageUrl">Book cover:</label>
+    <input type="text" class="form-control mb-4" id="imageUrl" value="{{book.imageUrl}}"  formControlName="imageUrl"> 
+     <div class="text-center">
+      <button class="btn btn-success" type="submit"  (click)="save()">
+        Save
+      </button> 
+
+      <button class="btn btn-danger ml-3" (click)="close()">
+        Close
+      </button> 
+     </div>
+  </form>
+</div>

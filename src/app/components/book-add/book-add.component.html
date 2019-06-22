@@ -2,7 +2,7 @@
 
   <h2 class="my-3 text-center">Recommend a book</h2>
 
-  <form >
+  <form  (ngSubmit)="onSubmit()" >
     <label for="title">Title:</label>
     <input type="text" class="form-control mb-4" id='title' placeholder="Please insert title" formControlName="title">
 
@@ -37,8 +37,7 @@
 
     <label for="imageUrl">Book cover:</label>
     <input type="text" class="form-control mb-4" id="imageUrl" placeholder="Please insert url of book cover"  formControlName="imageUrl"> 
-     
-    <div class="text-center">
+     <div class="text-center">
       <button class="btn btn-success" type="submit">
         Add book
       </button> 

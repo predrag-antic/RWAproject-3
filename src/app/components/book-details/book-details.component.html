@@ -29,7 +29,14 @@
             </div>
          </div>
          <hr>
-        <button class="btn btn-danger my-3">Add to favorites</button>
-        <button class="btn btn-success my-3 ml-3">Edit book</button>
+            
+               <button class="btn btn-danger my-3" (click)="addToFavorites()" *ngIf="book.favorite==='no'; else remove">Add to favorites</button>
+            
+           <ng-template #remove>
+           <button class="btn btn-danger my-3" (click)="addToFavorites()">Remove from favorites</button> 
+            </ng-template>
+         
+        
+        <button class="btn btn-success my-3 ml-3" routerLink="/edit-book/{{book.id}}">Edit book</button>
       </div>
 </div>

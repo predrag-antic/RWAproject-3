@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { BookAddComponent } from './components/book-add/book-add.component';
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffect } from './store/book.effect';
+import { BookEditComponent } from './components/book-edit/book-edit.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { BookEffect } from './store/book.effect';
     HomeComponent,
     BookComponent,
     BookDetailsComponent,
-    BookAddComponent
+    BookAddComponent,
+    BookEditComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

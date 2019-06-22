@@ -1,0 +1,8 @@
+<div class="container text-center">
+  <h2 class="my-5">Favorites</h2>
+  <div class="row" *ngIf="favorite$!==null">
+    <app-book *ngFor="let favorite of favorites$ | async" [book]="favorite" class="my-3 col-lg-6">
+
+    </app-book>
+  </div>
+</div>

@@ -48,3 +48,10 @@ export const selectBookById = (id: number) => createSelector(
   selectBookState,
   BookState => BookState.entities[id]  
 );
+
+export const selectFavorites = createSelector(
+    selectAllBooks,
+    books => books.filter(book => book.favorite === "yes")
+)
+
+export const selectNumOfBooks = selectTotal;
