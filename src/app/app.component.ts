@@ -9,7 +9,6 @@ import { GetBooksRequested } from './store/book.action';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'RWAproject';
 
   constructor(private store: Store<State>) {
 

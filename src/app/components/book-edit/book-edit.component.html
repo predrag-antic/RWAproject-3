@@ -2,49 +2,48 @@
 
   <h2 class="my-3 text-center">Edit a book</h2>
 
-  <form (ngSubmit)="onSubmit()">
+  
     <label for="title">Title:</label>
-    <input type="text" class="form-control mb-4" id='title' value="{{book.title}}"  formControlName="title">
+    <input type="text" class="form-control mb-4" id='title' value="{{book.title}}"  [formControl]="title">
 
     <div class="row">
       <div class="col col-6">
         <label  for="author">Author:</label>
-        <input type="text" class="form-control mb-4" id="author" value="{{book.author}}"   formControlName="author">
+        <input type="text" class="form-control mb-4" id="author" value="{{book.author}}"  [formControl]="author">
       </div>
       <div class="col col-6">
         <label for="genre">Genre:</label>
-        <input type="text" class="form-control mb-4" id="genre" value="{{book.genre}}"  formControlName="genre"> 
+        <input type="text" class="form-control mb-4" id="genre" value="{{book.genre}}" [formControl]="genre"> 
       </div>
     </div>
 
     <label for="description">Description:</label>
-    <textarea class="form-control mb-4" id="description" rows="3"   formControlName="description">{{book.description}}</textarea>
+    <textarea class="form-control mb-4" id="description" rows="3" value="{{book.description}}" [formControl]="description"></textarea>
 
     <div class="row">
         <div class="col col-4">
           <label for="rating">Rating:</label>
-          <input type="text" class="form-control mb-4" id="rating" value="{{book.rating}}"   formControlName="rating">
+          <input type="text" class="form-control mb-4" id="rating" value="{{book.rating}}"  [formControl]="rating">
         </div>
         <div class="col col-4">
           <label for="pages">Number of pages:</label>
-          <input type="text" class="form-control mb-4" id="pages" value="{{book.pages}}"   formControlName="pages">
+          <input type="text" class="form-control mb-4" id="pages" value="{{book.pages}}" [formControl]="pages" >
         </div>
         <div class="col col-4">
           <label for="published">First published:</label>
-          <input type="text" class="form-control mb-4" id="published" value="{{book.published}}"   formControlName="published">
+          <input type="text" class="form-control mb-4" id="published" value="{{book.published}}" [formControl]="published">
         </div>
     </div>
 
     <label for="imageUrl">Book cover:</label>
-    <input type="text" class="form-control mb-4" id="imageUrl" value="{{book.imageUrl}}"  formControlName="imageUrl"> 
+    <input type="text" class="form-control mb-4" id="imageUrl" value="{{book.imageUrl}}" [formControl]="imageUrl" > 
      <div class="text-center">
-      <button class="btn btn-success" type="submit"  (click)="save()">
+      <button class="btn btn-success" type="submit" (click)="onSubmit()">
         Save
       </button> 
-
-      <button class="btn btn-danger ml-3" (click)="close()">
-        Close
-      </button> 
      </div>
-  </form>
+  
+  <!-- <button class="btn btn-danger ml-3" (click)="close()">
+    Close
+  </button>  -->
 </div>

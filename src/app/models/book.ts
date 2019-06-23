@@ -6,7 +6,7 @@ export interface Book{
     description: string;
     rating?: number;
     pages?: number;
-    published?: string;
+    published?: number;
     imageUrl?: string;
     favorite?: string;
 }
