@@ -1,0 +1,11 @@
+<div class="container p-3 border mt-5 my-3" style="background: #f4f2e9">
+ <div class="text-center"><h3>Reviews</h3></div>
+ <hr>
+  <div *ngFor="let comment of comments | async" >
+      <div class="my-4">
+        <div style="display: flex"><h5 class="mr-3">{{comment.name}}</h5><p class="mr-3">o</p><p>{{comment.date}}</p></div>
+        <p style="font-size:18px; margin: 0px">{{comment.text}}</p> 
+      </div>
+      <hr>
+  </div>
+</div>

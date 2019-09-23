@@ -4,7 +4,8 @@ export interface Book{
     author: string;
     genre: string;
     description: string;
-    rating?: number;
+    ratingSum?: number;
+    ratings?: number;
     pages?: number;
     published?: number;
     imageUrl?: string;

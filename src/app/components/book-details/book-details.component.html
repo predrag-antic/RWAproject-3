@@ -1,10 +1,20 @@
-<div class="container p-5 text-center">
-    <div class="p-4 border" style="background: #f4f2e9">
+<div class="container p-5">
+    <div class="p-4 border text-center" style="background: #f4f2e9">
         <div class=" horizontal">
             <div class="mrg inline text-center">
-              <img src="{{book.imageUrl}}" alt="..." class="" style="height: 400px;">
-              <p class="mt-4 m-0">Rating:</p>
-              <h4>{{book.rating}}</h4>
+              <img src="{{book.imageUrl}}" alt="..." style="height: 400px;">
+              <div class="row mt-4 ">
+                <div class="col-sm-12">
+                  <h6 style="margin: 0px">({{book.ratings}})</h6>
+                    <ul class="list-inline rating-list" 
+                        *ngFor="let star of stars" style="display: inline-block" >
+                          <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                            <i class="fa fa-star fa-lg"></i>
+                          </li> 
+                    </ul>
+                </div>
+              </div>
+              <h4>{{(book.ratingSum/book.ratings).toFixed(2)}}</h4>
             </div>
             <div class="text-center py-2">
               <h3 class="font-weight-bold">{{book.title}}</h3>
@@ -27,16 +37,15 @@
               <hr>
               <p >{{book.description}}</p>
             </div>
-         </div>
-         <hr>
-            
-               <button class="btn btn-danger my-3" (click)="addToFavorites()" *ngIf="book.favorite==='no'; else remove">Add to favorites</button>
-            
-           <ng-template #remove>
-           <button class="btn btn-danger my-3" (click)="addToFavorites()">Remove from favorites</button> 
-            </ng-template>
-         
+          </div>
+          <hr>
+          <button class="btn btn-danger my-3" (click)="addToFavorites()" *ngIf="book.favorite==='no'; else remove">Add to favorites</button>
         
-        <button class="btn btn-success my-3 ml-3" routerLink="/edit-book/{{book.id}}">Edit book</button>
-      </div>
+          <ng-template #remove>
+          <button class="btn btn-danger my-3" (click)="addToFavorites()">Remove from favorites</button> 
+          </ng-template>
+          <button class="btn btn-success my-3 ml-3" routerLink="/edit-book/{{book.id}}">Edit book</button>
+    </div>
+    <app-comment-add></app-comment-add>
+    <app-comment-list [comments]="comments$"></app-comment-list>
 </div>

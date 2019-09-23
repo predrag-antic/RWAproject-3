@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { State } from 'src/app/store/root.reducer';
+import { State } from 'src/app/store/reducers/root.reducer';
 import { Location } from '@angular/common';
 import { FormControl } from '@angular/forms';
-import { selectNumOfBooks } from 'src/app/store/book.reducer';
-import { EditBook } from 'src/app/store/book.action';
+import { selectNumOfBooks } from 'src/app/store/reducers/book.reducer';
+import { EditBook } from 'src/app/store/actions/book.action';
 
 @Component({
   selector: 'app-book-edit',
@@ -24,7 +24,6 @@ export class BookEditComponent implements OnInit {
     author= new FormControl('');
     genre= new FormControl('');
     description= new FormControl('');
-    rating= new FormControl('');
     pages= new FormControl('');
     published= new FormControl('');
     imageUrl= new FormControl('');
@@ -47,7 +46,6 @@ export class BookEditComponent implements OnInit {
       this.author.setValue(this.book.author);
       this.genre.setValue(this.book.genre);
       this.description.setValue(this.book.description);
-      this.rating.setValue(this.book.rating);
       this.pages.setValue(this.book.pages);
       this.published.setValue(this.book.published);
       this.imageUrl.setValue(this.book.imageUrl);
@@ -59,7 +57,6 @@ export class BookEditComponent implements OnInit {
         this.book.author = this.author.value;
         this.book.genre = this.genre.value;
         this.book.description = this.description.value;
-        this.book.rating = this.rating.value;
         this.book.pages = this.pages.value;
         this.book.published =  this.published.value;
         this.book.imageUrl = this.imageUrl.value;

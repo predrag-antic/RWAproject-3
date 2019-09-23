@@ -1,10 +1,13 @@
 import { ActionReducerMap } from '@ngrx/store';
 import { BookState, bookReducer } from './book.reducer';
+import { CommentState, commentReducer } from './comment.reducer';
 
 export interface State {
-    book: BookState
+    book: BookState,
+    comment: CommentState
 }
 
 export const rootReducer: ActionReducerMap<State> = {
-    book: bookReducer
+    book: bookReducer,
+    comment: commentReducer
 }

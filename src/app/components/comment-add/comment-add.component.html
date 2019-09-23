@@ -1,0 +1,19 @@
+<div class="container p-3 border mt-5 my-3" style="background: #f4f2e9">
+  <form [formGroup]="addedComment" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col col-6">
+          <label for="email">Email: </label>
+          <input type="email" class="form-control mb-4" id="email" formControlName="email" placeholder="Please insert email">
+      </div>
+      <div class="col col-6">
+          <label for="name">Name: </label>
+          <input type="text" class="form-control mb-4" id="name" formControlName="name" placeholder="Please insert your name">
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="text">Review: </label>
+        <textarea class="form-control mb-4" id="text" rows="3" formControlName="text" ></textarea>     
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!addedComment.valid">Submit</button>
+  </form>
+</div>

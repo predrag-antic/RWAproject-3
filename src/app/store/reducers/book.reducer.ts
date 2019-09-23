@@ -1,10 +1,10 @@
-import { Action, createSelector } from '@ngrx/store';
-import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
+import { Action, createSelector, select } from '@ngrx/store';
+import { createEntityAdapter, EntityState } from '@ngrx/entity';
 import { createFeatureSelector } from '@ngrx/store';
-import { Book } from '../models/book';
-import { BookActions, BooksActionTypes } from './book.action';
+import { Book } from '../../models/book';
+import { BookActions, BooksActionTypes } from '../actions/book.action';
 
-export const booksAdapter : EntityAdapter<Book> =
+export const booksAdapter =
     createEntityAdapter<Book>();
 
 export interface BookState extends EntityState<Book> {};
@@ -52,6 +52,16 @@ export const selectBookById = (id: number) => createSelector(
 export const selectFavorites = createSelector(
     selectAllBooks,
     books => books.filter(book => book.favorite === "yes")
+)
+
+export const selectBooksByGenre = (genre: string) => createSelector(
+    selectAllBooks,
+    genre!=='All'?(books => books.filter(book => book.genre === genre)):(books=>books)
+);
+
+export const selectBooksByName = (name: string) => createSelector(
+    selectAllBooks,
+    books => books.filter(book=> book.title.toLowerCase().includes(name))
 )
 
 export const selectNumOfBooks = selectTotal;

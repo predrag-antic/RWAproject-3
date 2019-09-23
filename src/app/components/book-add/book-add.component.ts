@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { State } from 'src/app/store/root.reducer';
+import { State } from 'src/app/store/reducers/root.reducer';
 import { Router } from '@angular/router';
-import { selectNumOfBooks } from 'src/app/store/book.reducer';
-import { AddBook } from 'src/app/store/book.action';
+import { selectNumOfBooks } from 'src/app/store/reducers/book.reducer';
+import { AddBook } from 'src/app/store/actions/book.action';
 
 @Component({
   selector: 'app-book-add',
@@ -22,7 +22,6 @@ export class BookAddComponent implements OnInit {
     author: new FormControl('',Validators.required),
     genre: new FormControl('',Validators.required),
     description: new FormControl('',Validators.required),
-    rating: new FormControl(''),
     pages: new FormControl(''),
     published: new FormControl(''),
     imageUrl: new FormControl('')
@@ -42,7 +41,6 @@ export class BookAddComponent implements OnInit {
       author: this.addedBook.value.author,
       genre: this.addedBook.value.genre,
       description: this.addedBook.value.description,
-      rating: Number(this.addedBook.value.rating),
       pages: Number(this.addedBook.value.pages),
       published: Number(this.addedBook.value.published),
       imageUrl: this.addedBook.value.imageUrl,

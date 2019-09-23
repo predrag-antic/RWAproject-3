@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import { Book } from '../models/book';
+import { Book } from '../../models/book';
 import { Update } from '@ngrx/entity';
 
 

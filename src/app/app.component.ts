@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from './store/root.reducer';
-import { GetBooksRequested } from './store/book.action';
+import { State } from './store/reducers/root.reducer';
+import { GetBooksRequested } from './store/actions/book.action';
+import { GetCommentsRequested } from './store/actions/comment.action';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +18,6 @@ export class AppComponent {
   ngOnInit() {
 
       this.store.dispatch(new GetBooksRequested());
+      this.store.dispatch(new GetCommentsRequested());
   }
 }
